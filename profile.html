@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: #1b2838;
+            color: #eaeaea;
+            margin: 0;
+            padding: 20px;
+        }
+        .profile {
+            background-color: #141211;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile-info {
+            flex: 1;
+        }
+        .profile h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .profile img {
+            border-radius: 0;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #4b545f;
+        }
+        .status {
+            font-size: 18px;
+            margin: 12px 0;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 10px;
+        }
+        .button {
+            background-color: #3c4b5e;
+            color: #eaeaea;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px 0;
+        }
+        .button:hover {
+            background-color: #2b303b;
+        }
+        .games {
+            margin-top: 30px;
+        }
+        .game {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            background-color: #3c4b5e;
+            border-radius: 5px;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .game:hover {
+            transform: scale(1.05);
+        }
+        .game img {
+            width: 250px;
+            height: 150px;
+            border-radius: 5px;
+            border: 1px solid #4b545f;
+        }
+
+         a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: inherit;
+        }
+
+        {
+            margin: 0;
+            height: 100vh; /* Задает высоту на весь экран */
+            overflow: hidden; /* Скрывает прокрутку */
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1; /* Помещает видео на задний план */
+            transform: translate(-50%, -50%);
+        }
+        .content {
+            position: relative;
+            z-index: 1; /* Устанавливает контент поверх видео */
+            color: white; /* Цвет текста */
+            text-align: center; /* Центрирует текст */
+            padding: 20px;
+        }
+         .modal {
+            display: flex;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+          .modal-content {
+            background-color: #2a475e;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 10px;
+        }
+        .sidebar {
+            width: 25%;
+            background-color: #1b2838;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin-left: 630px; /* Отступ слева для основного контейнера */
+        }
+        .sidebar {
+            width: 25%;
+            background-color: #1b2838;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin-left: 630px; /* Отступ слева для основного контейнера */
+        }
+    </style>
+</head>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <a href="#" id="loginBtn">Войти</a>
+        <h2>Авторизация</h2>
+        <input type="text" id="username" placeholder="Введите логин..." style="padding: 10px; width: 93%; border: none; border-radius: 5px; background: linear-gradient(90deg, #1b2838, #2a475e); color: white;">
+        <label for="text">ㅤ</label>
+        <input type="password" id="password" placeholder="Введите пароль..." style="padding: 10px; width: 93%; border: none; border-radius: 5px; background: linear-gradient(90deg, #1b2838, #2a475e); color: white;">
+        <label for="text">ㅤ</label>
+        <button id="login" style="padding: 10px; width: 100%; border: none; border-radius: 5px; background: linear-gradient(90deg, #1b2838, #1b2838); color: white;">Войти</button>
+        <div id="error-message" style="color: red; margin-top: 10px;"></div> <!-- Элемент для сообщения об ошибке -->
+    </div>
+</div>
+
+<body>
+    <video autoplay muted loop>
+    <source src="https://cdn.fastly.steamstatic.com/steamcommunity/public/images/items/2598440/421f7cb071d19cf067803b8c16f692443c6c0d45.webm" type="video/webm">
+</video>
+
+<back>
+<div class="profile">
+    <div class="profile-info">
+      <h1><img src="https://cdn.fastly.steamstatic.com/steamcommunity/public/images/items/2598440/5bdec92696b30d8b1a7dd8e00e1af4ec4ddc9013.gif" alt="Аватар">
+       Имя пользователя</h1>
+        <div class="sidebar">
+        <p class="status" style="color: #32CD32">В игре <br>Counter Strike 2</p>
+        <button class="button">Добавить в друзья</button>
+   <div class="button-container">
+    <button class="button"><a href="https://steamcommunity.com/profiles/76561199555206670/games/?tab=all">Игры</button></a>
+    <button class="button"><a href="https://steamcommunity.com/profiles/76561199555206670/inventory/">Инвентарь</button></a>
+    <button class="button"><a href="https://steamcommunity.com/profiles/76561199555206670/friends/">Друзья</button></a>
+    <button class="button"><a href="glavniu.html">Магазин</button></a>
+</div>
+</div>
+<div class="games">
+    <h2>Игры</h2>
+    <h2><div class="game">
+        <img src="https://avatars.mds.yandex.net/i?id=f5651f1cdff4f7d5218fb7733ce782cf1d18fa69-10752752-images-thumbs&n=13" alt="Игра 1">
+        <p>DOTA 2</p>
+    </div>
+    <div class="game">
+        <img src="https://avatars.mds.yandex.net/i?id=f07249e37abca65af9773f1e40a21872ebb746d6-6438015-images-thumbs&n=13" alt="Игра 2">
+        <p>RUST</p>
+    </div>
+    <div class="game">
+        <img src="https://cdn.mos.cms.futurecdn.net/xz2HxeuCGUzmZKoWCdp8JV.jpg" alt="Игра 3">
+        <p>Counter Strike 2</p>
+    </div>
+</div>
+</h2>
+<script>
+   // Открытие и закрытие модального окна
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("loginBtn");
+
+    btn.onclick = function() {
+        modal.style.display = "flex";
+    }
+
+    // Обработка логина
+    document.getElementById('login').onclick = function() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+
+        // Сбрасываем сообщение об ошибке
+        errorMessage.textContent = '';
+
+        if (username === 'ira' && password === '123') {
+            modal.style.display = 'none';
+            document.getElementById('main-content').style.display = 'flex';
+        } else {
+            errorMessage.textContent = 'Неверный логин или пароль!';
+        }
+    };
+</script>
+</body>
+</html>

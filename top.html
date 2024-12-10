@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Топ продаж</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #171a21;
+            color: #c6d4df;
+        }
+
+        header {
+            background-color: #1b2838;
+            padding: 15px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1b2838;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: #c6d4df;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            color: #66c0f4;
+        }
+
+        .top-sales {
+            padding: 20px;
+        }
+
+        .game-card {
+            background-color: #2a475e;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .game-card:hover {
+            transform: scale(1.02);
+        }
+
+        .game-card img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .game-info {
+            margin-left: 20px;
+        }
+
+        .game-info h3 {
+            margin: 0;
+            color: #66c0f4;
+        }
+
+        .game-price {
+            font-size: 18px;
+            margin-top: 5px;
+            color: #b8b6b4;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Топ продаж</h1>
+</header>
+
+<div class="navbar">
+    <a href="glavniu.html">Главная</a>
+    <a href="top.html">Топ продаж</a>
+    <a href="https://store.steampowered.com/explore/upcoming/">Новые релизы</a>
+    <a href="profile.html">Профиль</a>
+</div>
+<div class="top-sales">
+    <h2>Лучшие продажи</h2>
+
+    <a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" class="game-card">
+        <img src="https://images.boosty.to/image/5e3ebb7e-7a0d-46ed-ad38-9e6e9837f37a?change_time=1658786835" alt="Grand Theft Auto V">
+        <div class="game-info">
+            <h3>1. Grand Theft Auto V</h3>
+            <div class="game-price">8 100₸</div>
+        </div>
+    </a>
+
+    <a href="https://store.steampowered.com/app/730/CounterStrike_2/" class="game-card">
+        <img src="https://cdn.mos.cms.futurecdn.net/xz2HxeuCGUzmZKoWCdp8JV.jpg" alt="Counter-Strike 2">
+        <div class="game-info">
+            <h3>2. Counter-Strike 2</h3>
+            <div class="game-price">7 200 ₸</div>
+        </div>
+    </a>
+
+    <a href="https://store.steampowered.com/app/1404210/Red_Dead_Online/" class="game-card">
+        <img src="https://avatars.mds.yandex.net/i?id=4dae1b2f060e67ead2d10f59b9115dfd4b91a135-9848534-images-thumbs&n=13" alt="Red Dead Redemption 2">
+        <div class="game-info">
+            <h3>3. Red Dead Redemption 2</h3>
+            <div class="game-price">8 300 ₸</div>
+        </div>
+    </a>
+
+    <a href="https://store.steampowered.com/app/570/Dota_2/" class="game-card">
+        <img src="https://avatars.mds.yandex.net/i?id=f5651f1cdff4f7d5218fb7733ce782cf1d18fa69-10752752-images-thumbs&n=13" alt="Dota 2">
+        <div class="game-info">
+            <h3>4. Dota 2</h3>
+            <div class="game-price">Бесплатно</div>
+        </div>
+    </a>
+
+    <a href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/" class="game-card">
+        <img src="https://avatars.mds.yandex.net/i?id=6f6cf458cd6ce5b26474558bf72f5b81d61aa238-11018127-images-thumbs&n=13" alt="Forza Horizon 5">
+        <div class="game-info">
+            <h3>5. Forza Horizon 5</h3>
+            <div class="game-price">19 999 ₸</div>
+        </div>
+    </a>
+
+    <a href="https://store.steampowered.com/app/252490/RUST/" class="game-card">
+        <img src="https://avatars.mds.yandex.net/i?id=f07249e37abca65af9773f1e40a21872ebb746d6-6438015-images-thumbs&n=13" alt="RUST">
+        <div class="game-info">
+            <h3>6. RUST</h3>
+            <div class="game-price">10 000 ₸</div>
+        </div>
+    </a>
+
+    <a href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/" class="game-card">
+        <img src="https://avatars.mds.yandex.net/i?id=097216deba1f061c7b083da5437a510122c2cc14-4547999-images-thumbs&n=13" alt="PUBG BATTLEGROUNDS">
+        <div class="game-info">
+            <h3>7. PUBG BATTLEGROUNDS</h3>
+            <div class="game-price">Бесплатно</div>
+        </div>
+    </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экшен</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #171a21; 
+            color: #c6d4df; 
+        }
+
+        header {
+            background-color: #1b2838;
+            padding: 15px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1b2838;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: #c6d4df;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            color: #66c0f4;
+     
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+            
+        }
+        
+        .sidebar {
+            width: 20%;
+            background-color: #1b2838;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .modal {
+            display: flex;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #2a475e;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2a475e;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #c6d4df;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: ;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .game-list {
+            width: 75%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .game-card {
+            background-color: #2a475e;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s;
+            color: #ffffff;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+
+        .game-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        footer {
+            background-color: #1b2838;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Экшен</h1>
+</header>
+
+<div class="navbar">
+    <a href="glavniu.html">Главная</a>
+    <a href="top.html">Топ продаж</a>
+     <div class="dropdown">
+        <a href="#">Категории</a>
+        <div class="dropdown-content">
+            <a href="ekshen.html">Экшен</a>
+            <a href="shuter.html">Шутер</a>
+            <a href="prohoj.html">Прохождение</a>
+          
+        </div>
+    </div>
+    <a href="profile.html">Профиль</a>
+</div>
+<div class="container" id="main-content">
+    <div class="sidebar"> 
+        <h2>Фильтры</h2>
+        <div class="filter">
+            <label for="search">Поиск игр:</label>
+            <input type="text" id="search" placeholder="Введите название игры..." style="padding: 10px; width: 250px; border: none; border-radius: 5px; background: linear-gradient(90deg, #2a475e, #2a475e); color: white;">
+        </div>
+        <h3 style="color: gray;">
+        <a href="#Grant Theft Auto V">Grant Theft Auto V</a><br>
+        <a href="#Counter Stike 2">Counter Stike 2</a><br>
+        <a href="#Red Dead Redemption">Red Dead Redemption</a><br>
+        <a href="#Dota 2">Dota 2</a><br>
+        <a href="#Forza Horizon 5">Forza Horizon 5</a><br>
+        <a href="#RUST">RUST</a><br>
+        <a href="#PUBG BATTLEGROUNDS">PUBG BATTLEGROUNDS</a><br>
+        <a href="#Geometry Dash">Geometry Dash</a><br>
+        <a href="#Dead by Daylight">Dead by Daylight</a><br>
+        <a href="#Terraria">Terraria</a><br>
+        <a href="#Valheim">Valheim</a><br>
+        <a href="#Portal 2">Portal 2</a><br>
+        <a href="#Sea of Thieves: 2024 Edition">Sea of Thieves: 2024 Edition</a><br>
+        <a href="#The Elder Scrolls V: Skyrim VR">The Elder Scrolls V: Skyrim</a><br>
+        <a href="#Phasmophobia">Phasmophobia</a><br>
+        </h3>
+    </div>
+     <div class="game-list" id="game-list">
+
+        <a href="https://store.steampowered.com/app/570/Dota_2/" class="game-card">
+            <img src="https://avatars.mds.yandex.net/i?id=f5651f1cdff4f7d5218fb7733ce782cf1d18fa69-10752752-images-thumbs&n=13" alt="Game 4">
+            <div class="game-title"><h3 id="Dota 2">Dota 2</h3></div>
+            <div class="game-price">Бесплатно</div>
+        </a>
+        <a href="https://store.steampowered.com/app/252490/RUST/" class="game-card">
+            <img src="https://avatars.mds.yandex.net/i?id=f07249e37abca65af9773f1e40a21872ebb746d6-6438015-images-thumbs&n=13" alt="Game 6">
+            <div class="game-title"><h3 id="RUST">RUST</h3></div>
+            <div class="game-price">10 000 ₸</div>
+        </a>
+        <a href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/" class="game-card">
+            <img src="https://avatars.mds.yandex.net/i?id=097216deba1f061c7b083da5437a510122c2cc14-4547999-images-thumbs&n=13" alt="Game 7">
+            <div class="game-title"><h3 id="PUBG BATTLEGROUNDS">PUBG BATTLEGROUNDS</h3></div>
+            <div class="game-price">Бесплатно</div>
+        </a>
+        <a href="https://store.steampowered.com/app/381210/Dead_by_Daylight/" class="game-card">
+            <img src="https://avatars.mds.yandex.net/get-marketpic/8711440/picb1174f20f784066129d25eb7c99243ae/orig" alt="Game 9">
+            <div class="game-title"><h3 id="Dead by Daylight">Dead by Daylight</h3></div>
+            <div class="game-price">6 100₸</div>
+        </a>
+        <a href="https://store.steampowered.com/app/396750/Phasmophobia/" class="game-card">
+            <img src="https://steamuserimages-a.akamaihd.net/ugc/2520411813235354405/E6883F2A014890820809B09ED3D11D584BFB9B13/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true" alt="Game 15">
+            <div class="game-title"><h3 id="Phasmophobia">Phasmophobia</h3></div>
+            <div class="game-price">5 200 ₸</div>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy;Магазин игр</p>
+</footer>
+
+<script>
+  
+    // Функция поиска
+    document.getElementById('search').addEventListener('input', function() {
+        const searchValue = this.value.toLowerCase();
+        const gameCards = document.querySelectorAll('.game-card');
+        
+        gameCards.forEach(card => {
+            const title = card.querySelector('.game-title h3').innerText.toLowerCase();
+            card.style.display = title.includes(searchValue) ? 'block' : 'none';
+        });
+    });
+</script>
+
+</body>
+</html>
